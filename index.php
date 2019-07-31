@@ -50,8 +50,7 @@ include ('inc/navbar.php');
 <section class="py-5">
     <div class="container">
         <h1 class="display-4">PHP Login System with Registration</h1>
-        <p class="lead">A Simple PHP Login System With User Registration <a href="#">Kandil</a>, taken by <a
-                href="#">Joanna Kosinska</a>!</p>
+        <p class="lead">A Simple PHP Login System With User Registration <a href="#">Kandil</a></p>
     </div>
 </section>
 

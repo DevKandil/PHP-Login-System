@@ -1,7 +1,7 @@
 <?php 
 
   session_start();
-  include ('config.php');
+  include ('inc/config.php');
     
 
     include ('inc/header.php'); 
@@ -13,7 +13,7 @@
 
       if (isset($email,$password)) {
         
-        $stmt = $con->prepare("SELECT * FROM admin WHERE email=? AND password=?");
+        $stmt = $con->prepare("SELECT * FROM users WHERE email=? AND password=?");
         $stmt->execute(array($email,$password));
         $data = $stmt->fetch();
 
