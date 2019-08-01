@@ -1,7 +1,7 @@
 <?php 
 
   session_start();
-  include ('config.php');
+  include ('inc/config.php');
     
 
     include ('inc/header.php'); 
@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title text-center">Register</h5>
-                    <form class="form-signin" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+                    <form class="form-signin" id="form-signin" action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-label-group">
                             <input type="text" name="name" id="inputUserame" class="form-control" placeholder="Your Name" required
                                 autofocus>

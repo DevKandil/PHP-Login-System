@@ -7,9 +7,9 @@
   <title>Login System</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="design/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="design/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="design/css/style.css" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
 </head>
 

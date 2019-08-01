@@ -1,7 +1,7 @@
   <!-- Bootstrap core JavaScript -->
-  <script src="design/js/jquery-3.4.0.min.js"></script>
-  <script src="design/js/bootstrap.min.js"></script>
-  <script src="design/js/main.js"></script>
+  <script src="assets/js/jquery-3.4.0.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>

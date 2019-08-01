@@ -1,3 +1,5 @@
 <?php
 
-include ("connect.php");
+include_once 'classes/DB.php';
+
+$con = DB::setConnection();

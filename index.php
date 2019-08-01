@@ -14,21 +14,21 @@ include ('inc/navbar.php');
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('design/images/1.jpg')">
+            <div class="carousel-item active" style="background-image: url('assets/images/1.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">First Slide</h2>
                     <p class="lead">This is a description for the first slide.</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('design/images/2.jpg')">
+            <div class="carousel-item" style="background-image: url('assets/images/2.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Second Slide</h2>
                     <p class="lead">This is a description for the second slide.</p>
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('design/images/3.jpg')">
+            <div class="carousel-item" style="background-image: url('assets/images/3.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                     <h2 class="display-4">Third Slide</h2>
                     <p class="lead">This is a description for the third slide.</p>
