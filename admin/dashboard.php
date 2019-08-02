@@ -1,11 +1,10 @@
 <?php 
 
 session_start();
+$pageTitle = 'Dashboard';
 include('inc/config.php');
 
 if (isset($_SESSION['name'])) {
-
-    $pageTitle = 'Dashboard';
 
 ?>
 <div class="d-flex" id="wrapper">

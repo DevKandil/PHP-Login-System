@@ -10,6 +10,11 @@ include ('inc/navbar.php');
     <div class="container">
         <h1 class="display-5">PHP Login System with Registration</h1>
         <p class="lead">A Simple PHP Login System With User Registration Coded with Love By: <a href="#">Kandil</a></p>
+        <?php
+            if (isset($_SESSION['name'])) {
+                echo '<p class="lead">Welcome <strong>' . $_SESSION['name'].'</strong></p>';
+            }
+        ?>
     </div>
 </section>
 

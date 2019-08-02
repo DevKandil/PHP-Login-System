@@ -1,4 +1,4 @@
-$(document)
+/* $(document)
 .on("submit", "form.form-signin", function(event) {
     event.preventDefault();
 
@@ -37,4 +37,4 @@ $(document)
     });
 
     return false;
-});
+}); */

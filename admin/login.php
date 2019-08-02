@@ -3,13 +3,13 @@
     session_start();
     $pageTitle = 'Login Page';
 
-
     if (isset($_SESSION['name'])) {
         header('Location: dashboard.php');    // Redirect To Dashboard Page
     }
 
     include ('inc/config.php');
-    include ('inc/header.php'); 
+
+    // Check If User Coming From HTTP Request
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -17,16 +17,20 @@
       $password = sha1($_POST['password']);
 
       if (isset($email,$password)) {
-        
+
+        // Check If The User Exist In The Database
+
         $stmt = $con->prepare("SELECT * FROM users WHERE email=? AND password=?");
         $stmt->execute(array($email,$password));
         $data = $stmt->fetch();
 
-        if ($data > 0 ) {
+         // If $data > 0 This Mean The Database Contain Record About This Username
 
-          $_SESSION['id'] = $data['id'];
-          $_SESSION['name'] = $data['name'];
-          $_SESSION['email'] = $data['email'];
+        if ($data > 0 && $email === $data['email'] && $password === $data['password']) {
+
+          $_SESSION['id'] = $data['id'];        // Register Session ID
+          $_SESSION['name'] = $data['name'];    // Register Session Name
+          $_SESSION['email'] = $data['email'];  // Register Session Email
 
           header("Location: dashboard.php");
           exit();
@@ -62,8 +66,8 @@
                                 </div>
 
                                 <div class="custom-control custom-checkbox mb-3">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                    <input type="checkbox" name="remember" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
                                 </div>
                                 <button
                                     class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"

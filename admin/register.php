@@ -8,6 +8,69 @@
         header('Location: dashboard.php');    // Redirect To Dashboard Page
     }
 
+    // Check If User Coming From HTTP Request
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Get Variables From The Form
+        $name   = $_POST['name'];
+        $email  = $_POST['email'];
+        $password   = sha1($_POST['password']);
+        $confirmpassword = sha1($_POST['confirmpassword']);
+
+        // Validate The Form
+        $formErrors = array();
+
+        if (empty($name)) {
+            $formErrors[] = 'Name cannot be <strong>empty</strong>';
+        }
+        if (empty($email)) {
+            $formErrors[] = 'Email cannot be <strong>empty</strong>';
+        }
+        if (empty($password)) {
+            $formErrors[] = 'Password cannot be <strong>empty</strong>';
+        }
+        if ($password !== $confirmpassword) {
+            $formErrors[] = 'Password Must be <strong>the Same</strong>';
+        }
+        foreach ($formErrors as $error) {
+            $theMsg = '<div class="alert alert-danger">' . $error . '</div>';
+            redirectTo($theMsg, "back");
+        }
+
+        // Check If There is No Errors Then Insert
+        if (empty($formErrors)) {
+
+            // Check If Email Is Exist In Database
+            $check = checkItem("email", "users", $email);
+
+            if ($check == 0) {
+
+                // Insert The Database With This Info
+                $stmt = $con->prepare("INSERT INTO users(name, email, password) 
+                                                VALUES(:name, :email, :pass)");
+                // Bind Parameters :
+                $stmt->bindparam(':name',$name);
+                $stmt->bindparam(':email',$email);
+                $stmt->bindparam(':pass',$password);
+                // Execute Statement ;
+                $stmt->execute();
+
+                $_SESSION['name'] = $name;    // Register Session Name
+                $_SESSION['email'] = $email;  // Register Session Email
+
+                header('Location: ../index.php');
+                exit();
+
+            } else {
+
+                $theMsg = '<div class="alert alert-danger">Sorry This Email Is Exist</div>';
+
+                redirectTo($theMsg, "back");
+
+            }
+        }
+    }
+
 ?>
 
 <div class="container">
