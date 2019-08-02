@@ -1,9 +1,9 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="assets/js/jquery-3.4.0.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="<?php echo $js; ?>jquery-3.4.0.min.js"></script>
+  <script src="<?php echo $js; ?>bootstrap.min.js"></script>
+  <script src="<?php echo $js; ?>main.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
@@ -11,6 +11,12 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+  </script>
+
+  <!-- wow.js -->
+  <script src="<?php echo $js; ?>wow.min.js"></script>
+  <script>
+      new WOW().init();
   </script>
 
 </body>

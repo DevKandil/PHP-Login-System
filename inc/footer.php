@@ -1,14 +1,14 @@
   <!-- Bootstrap core JavaScript -->
-  <script src="assets/js/jquery-3.4.0.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="admin/assets/js/jquery-3.4.0.min.js"></script>
+  <script src="admin/assets/js/bootstrap.min.js"></script>
+  <!-- wow.js -->
+  <script src="admin/assets/js/wow.min.js"></script>
+  <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Menu Toggle Script -->
+  <!-- wow.js -->
   <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
+      new WOW().init();
   </script>
 
 </body>

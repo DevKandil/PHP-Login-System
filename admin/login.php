@@ -1,9 +1,14 @@
 <?php 
 
-  session_start();
-  include ('inc/config.php');
-    
+    session_start();
+    $pageTitle = 'Login Page';
 
+
+    if (isset($_SESSION['name'])) {
+        header('Location: dashboard.php');    // Redirect To Dashboard Page
+    }
+
+    include ('inc/config.php');
     include ('inc/header.php'); 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +23,8 @@
         $data = $stmt->fetch();
 
         if ($data > 0 ) {
-          
+
+          $_SESSION['id'] = $data['id'];
           $_SESSION['name'] = $data['name'];
           $_SESSION['email'] = $data['email'];
 

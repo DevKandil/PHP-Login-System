@@ -1,10 +1,12 @@
 <?php 
 
-  session_start();
-  include ('inc/config.php');
-    
+    session_start();
+    $pageTitle = 'Register';
+    include ('inc/config.php');
 
-    include ('inc/header.php'); 
+    if (isset($_SESSION['name'])) {
+        header('Location: dashboard.php');    // Redirect To Dashboard Page
+    }
 
 ?>
 
@@ -42,16 +44,18 @@
                             <label for="inputConfirmPassword">Confirm password</label>
                         </div>
 
+                        <div class="js-error">
+                        </div>
+
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="submit">Register</button>
                         <a class="d-block text-center mt-2 small" href="login.php">Login</a>
                         
                         <hr class="my-4">
-                        <!--
-                        <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-                                class="fab fa-google mr-2"></i> Sign up with Google</button>
-                        -->
-                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
-                                class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+
+                        <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit">
+                            <i class="fa fa-facebook mr-2"></i>
+                            Sign up with Facebook
+                        </button>
                         
                     </form>
                 </div>
@@ -61,5 +65,5 @@
 </div>
 
 <?php
-
-    include ('inc/footer.php'); 
+    include ('inc/footer.php');
+?>

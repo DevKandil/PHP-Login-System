@@ -1,17 +1,12 @@
 <?php 
 
 session_start();
-
-include('config.php');
-
-include ('inc/header.php'); 
+$pageTitle = 'Not Found';
+include('inc/config.php');
 
 ?>
 <div class="d-flex" id="wrapper">
-    <?php // include ('inc/sidebar.php') ?>
-    <!-- Page Content -->
     <div id="page-content-wrapper">
-        <?php // include ('inc/navbar.php') ?>
         <div class="container-fluid">
             <!-- page content starts from here -->
 
@@ -27,5 +22,5 @@ include ('inc/header.php');
     </div> <!-- page content ends here -->
 </div> <!-- /#wrapper -->
 <?php 
-include ('inc/footer.php'); 
+include ('inc/footer.php');
 ?>

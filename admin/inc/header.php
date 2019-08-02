@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
+    <title><?php getTitle() ?></title>
 
-  <title>Dashboard</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="<?php echo $css; ?>bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo $css; ?>fontawesome.min.css" />
+    <link rel="stylesheet" href="<?php echo $css; ?>animate.css">
+    <link rel="stylesheet" href="<?php echo $css; ?>style.css" />
 
 </head>
-
 <body>
