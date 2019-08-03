@@ -15,6 +15,10 @@ include ('inc/navbar.php');
                 echo '<p class="lead">Welcome <strong>' . $_SESSION['name'].'</strong></p>';
             }
         ?>
+
+        <h5>Bugs:</h5>
+        <p class="lead">[+] - Empty.</p>
+
     </div>
 </section>
 

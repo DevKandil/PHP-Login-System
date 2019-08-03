@@ -48,15 +48,18 @@
                 // Insert The Database With This Info
                 $stmt = $con->prepare("INSERT INTO users(name, email, password) 
                                                 VALUES(:name, :email, :pass)");
-                // Bind Parameters :
                 $stmt->bindparam(':name',$name);
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':pass',$password);
-                // Execute Statement ;
                 $stmt->execute();
 
-                $_SESSION['name'] = $name;    // Register Session Name
-                $_SESSION['email'] = $email;  // Register Session Email
+                $stmnt = $con->prepare('SELECT * FROM users WHERE email = ? LIMIT 1');
+                $stmnt->execute(array($email));
+                $row = $stmnt->fetch();
+
+                $_SESSION['id']   = $row['id'];           // Register Session Name
+                $_SESSION['name']   = $name;           // Register Session Name
+                $_SESSION['email']  = $email;          // Register Session Email
 
                 header('Location: ../index.php');
                 exit();

@@ -1,12 +1,22 @@
-<?php 
+<?php
+
+/*
+===============================================
+== Dashboard Page
+== You can Manage your site from here
+===============================================
+*/
 
 session_start();
 $pageTitle = 'Dashboard';
-include('inc/config.php');
 
 if (isset($_SESSION['name'])) {
 
+    include('inc/config.php');
+
 ?>
+
+
 <div class="d-flex" id="wrapper">
     <?php include ('inc/sidebar.php') ?>
     <!-- Page Content -->
